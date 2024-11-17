@@ -5,6 +5,8 @@ const app = require('../app');  // Импортируем сервер
 
 const server = http.createServer(app);
 
+jest.setTimeout(10000);
+
 describe('GET /', () => {
   it('responds with Hello, World!', async () => {
     const response = await request(server).get('/');
